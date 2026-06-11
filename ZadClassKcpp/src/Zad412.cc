@@ -1,0 +1,28 @@
+#include <iostream>
+#include "../include/Zad412.h"
+
+using namespace std;
+
+void Zad412::Uruchom()
+{
+    int liczba;
+
+    cout << "Podaj liczbe do obliczenia silni: ";
+    cin >> liczba;
+
+    if (liczba < 0) {
+        cout << "Silnia jest zdefiniowana tylko dla liczb nieujemnych." << endl;
+        return;
+    }
+
+    long long silnia = 1;
+    long long sumaSilni = 0;
+
+    for (int i = 1; i <= liczba; i++) {
+        silnia *= i;
+        sumaSilni += silnia;
+    }
+
+    cout << "Suma silni od 1 do " << liczba
+         << " wynosi: " << sumaSilni << endl;
+}
